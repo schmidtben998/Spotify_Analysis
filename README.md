@@ -125,22 +125,81 @@ topArtists(num=5)
 > - num - number of artists printed
 
 getTopAlbums(num=5)
+> returns a list of top albums
+>
+> Parameters:
+> - num - number of albums returned
+
+topAlbums(num=5)
+> prints an ordered list of top albums
+>
+> Parameters:
+> - num - number of albums printed
 
 searchSongs(search, by="name", id=False)
+> returns a pandas DataFrame of songs based on search term
+>
+> Parameters:
+> - search - string to search by (empty string, "", to return all songs)
+> - by - column of DataFrame to search by ("name", "artist", or "album")
+> - id - True to add song ID column, False to not
 
 searchArtists(search, by="name", id=False)
+> returns a pandas DataFrame of artists based on search term
+>
+> Parameters:
+> - search - string to search by (empty string, "", to return all artists)
+> - by - column of DataFrame to search by ("name" or "genre")
+> - id - True to add artist ID column, False to not
 
 searchAlbums(search, by="name", id=False)
+> returns a pandas DataFrame of albums based on search term
+>
+> Parameters:
+> - search - string to search by (empty string, "", to return all albums)
+> - by - column of DataFrame to search by ("name" or "artist")
+> - id - True to add album ID column, False to not
 
 getTopGenres(num=5)
+> returns list of top genres
+>
+> Parameters:
+> - num - number of returned genres
 
 topGenres(num=5)
+> prints list of top genres
+>
+> Parameters:
+> - num - number of printed genres
 
 popularity(fromCategory="all", fromSearch=None)
+> prints average, highest, and lowest popularity for songs and/or artists that are in listening data
+>
+> Parameters:
+> - fromCategory - select if popularity is from a specific artist or album ("all", "artist", or "album")
+> - fromSearch - search term for specific artist or album (None if "all" is selected)
 
 graphListenCounts()
+> returns histogram of songs and their number of listens
 
 _graphTotalTime(songSource=None, graphType="total", leapYear=False, existingGraph=None, label=None, changeDateRange=False)
+> returns line graph of time listened
+>
+> Parameters:
+> - songSource - a list of songs
+> - graphType - type of graph ("total" or "byday")
+> - leapYear - True or False if the year is a leap year
+> - existingGraph - a Matplotlib axis to put graph onto another graph
+> - label - string label for the line
+> - changeDateRange - will change graph date range by removing dates before first listen and after last listen
 
 graphTimeListened(self, search="", by="total_total", leapYear=False, existingGraph=None, changeDateRange=False)
+> returns line graph of time listened
+>
+> Parameters:
+> - search - a string search term
+> - by - type of graph and search (<"total", "artist", "album", "song">_<"total", "byday">)
+> - leapYear - True or False if the year is a leap year
+> - existingGraph - a Matplotlib axis to put graph onto another graph
+> - changeDateRange - will change graph date range by removing dates before first listen and after last listen
  
